@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home component renders as expected 1`] = `
+<div>
+  <section
+    className="content view-enter"
+  >
+    <div>
+      <h1>
+        Advanced repository browser
+      </h1>
+      <p>
+        <button
+          className="ant-btn ant-btn-primary"
+          onClick={[Function]}
+          type="button"
+        >
+          <i
+            className="anticon anticon-info-circle-o"
+          />
+          <span>
+            go to about
+          </span>
+        </button>
+      </p>
+    </div>
+  </section>
+</div>
+`;

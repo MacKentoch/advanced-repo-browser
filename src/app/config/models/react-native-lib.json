@@ -1,0 +1,31 @@
+[
+  {
+    "name": "react-native-beacons-manager",
+    "url": "https://github.com/MacKentoch/react-native-beacons-manager",
+    "imageSrc": "",
+    "description": "React-Native library for detecting beacons (iOS and Android)",
+    "content": [
+      "react-native",
+      "ibeacon",
+      "beacon"
+    ],
+    "platform": [
+      "ios",
+      "android"
+    ]
+  },
+  {
+    "name": "rn-analog-clock",
+    "url": "https://github.com/MacKentoch/rn-analog-clock",
+    "imageSrc": "",
+    "description": "React-Native (iOS native bridge) native alternative to traditional time picker (Objective C bridge version)",
+    "content": [
+      "react-native",
+      "ibeacon",
+      "beacon"
+    ],
+    "platform": [
+      "ios"
+    ]
+  }
+]

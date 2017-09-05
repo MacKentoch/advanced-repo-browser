@@ -1,0 +1,22 @@
+[
+  {
+    "name":         "magic-markdown-to-html",
+    "url":          "https://github.com/MacKentoch/magic-markdown-to-html",
+    "imageSrc":     "",
+    "description":  "electron application to convert markdown into github flavour html",
+    "content":      [
+      "react",
+      "electron"
+    ]
+  },
+  {
+    "name":         "pdf-slider",
+    "url":          "https://github.com/MacKentoch/pdf-slider",
+    "imageSrc":     "",
+    "description":  "an electron pdf viewer",
+    "content":      [
+      "react",
+      "electron"
+    ]
+  }
+]

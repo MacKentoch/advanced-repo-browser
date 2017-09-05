@@ -1,0 +1,26 @@
+{
+  "brand":      "Advanced repo Browser",
+  "leftLinks":  [],
+  "rightLinks": [
+    {
+      "label":      "Home",
+      "icon":       "home",
+      "link":       "/"
+    },
+    {
+      "label":      "Protected",
+      "icon":       "lock",
+      "link":       "/protected"
+    },
+    {
+      "label":      "About",
+      "icon":       "info",
+      "link":       "/about"
+    },
+    {
+      "label":      "Disconnect",
+      "icon":       "signout",
+      "link":       "/login"
+    }
+  ]
+}

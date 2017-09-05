@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1, "icon": "home", "label": "Home", "link": "/"
+  },
+  {
+    "id": 2, "icon": "home", "label": "Web starters", "link": "/webstarters"
+  },
+  {
+    "id": 2, "icon": "home", "label": "Mobile starters", "link": "/mobilestarters"
+  },
+  {
+    "id": 3, "icon": "home", "label": "Web applications", "link": "/webapps"
+  },
+  {
+    "id": 3, "icon": "home", "label": "React native library", "link": "/reactnativelibs"
+  },
+  {
+    "id": 4, "icon": "home", "label": "About", "link": "about"
+  }
+]

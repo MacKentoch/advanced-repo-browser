@@ -1,0 +1,46 @@
+[
+  {
+    "name": "reactNativeReduxFastStarter",
+    "url": "https://github.com/MacKentoch/reactNativeReduxFastStarter",
+    "imageSrc": "",
+    "description": "React Native Redux fast Starter",
+    "content": [
+      "react-native",
+      "redux",
+      "sidemenu"
+    ],
+    "platform": [
+      "ios",
+      "android"
+    ]
+  },
+  {
+    "name": "reactNativeReduxSidemenuTabbarStarter",
+    "url": "https://github.com/MacKentoch/reactNativeReduxSidemenuTabbarStarter",
+    "imageSrc": "",
+    "description": "React Native Redux alternate iOS fast starter combining sidemenu and tabbar",
+    "content": [
+      "react-native",
+      "redux",
+      "sidemenu",
+      "tabbar"
+    ],
+    "platform": [
+      "ios"
+    ]
+  },
+  {
+    "name": "reactNativeBeaconExample",
+    "url": "https://github.com/MacKentoch/reactNativeBeaconExample",
+    "imageSrc": "",
+    "description": "React-Native Beacon example (medium article related)",
+    "content": [
+      "react-native",
+      "react-native-beacons-manager"
+    ],
+    "platform": [
+      "ios",
+      "android"
+    ]
+  }
+]

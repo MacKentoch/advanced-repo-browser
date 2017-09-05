@@ -1,0 +1,124 @@
+[
+  {
+    "name": "react-bootstrap-webpack-starter",
+    "url": "https://github.com/MacKentoch/react-bootstrap-webpack-starter",
+    "imageSrc": "",
+    "description": "ReactJS + React Router 4 + Bootstrap + Hot Reload Starter + Webpack 2",
+    "content": [
+      "react",
+      "bootstrap",
+      "react-router 4",
+      "webpack 2"
+    ],
+    "server": [
+      "spa"
+    ]
+  },
+  {
+    "name": "react-bootstrap-webpack-ssr-starter",
+    "url": "https://github.com/MacKentoch/react-bootstrap-webpack-ssr-starter",
+    "imageSrc": "",
+    "description": "ReactJS + React Router 4 + Bootstrap + Hot Reload Starter + Webpack 2",
+    "content": [
+      "react",
+      "bootstrap",
+      "react-router 4",
+      "webpack 2"
+    ],
+    "server": [
+      "spa",
+      "ssr"
+    ]
+  },
+  {
+    "name": "react-redux-bootstrap-webpack-starter",
+    "url": "https://github.com/MacKentoch/react-redux-bootstrap-webpack-starter",
+    "imageSrc": "",
+    "description": "React + React-Router 4 + Redux + Bootstrap + Hot Reload + redux-devtools + Webpack 2 STARTER",
+    "content": [
+      "react",
+      "bootstrap",
+      "react-router 4",
+      "webpack 2",
+      "redux",
+      "redux devtools"
+    ],
+    "server": [
+      "spa"
+    ]
+  },
+  {
+    "name": "react-redux-immutable-webpack-starter",
+    "url": "https://github.com/MacKentoch/react-redux-immutable-webpack-starter",
+    "imageSrc": "",
+    "description": "React + ImmutableJS + React-Router 4 + Redux + Bootstrap + Hot Reload + redux-devtools + Webpack 2 STARTER",
+    "content": [
+      "react",
+      "immutable",
+      "immutablejs",
+      "bootstrap",
+      "react-router 4",
+      "webpack 2",
+      "redux",
+      "redux devtools"
+    ],
+    "server": [
+      "spa"
+    ]
+  },
+  {
+    "name": "react-redux-immutable-webpack-ssr-starter",
+    "url": "https://github.com/MacKentoch/react-redux-immutable-webpack-ssr-starter",
+    "imageSrc": "",
+    "description": "React + ImmutableJS + React-Router 4 + Redux + Bootstrap + Hot Reload + redux-devtools-extension + Webpack 2 STARTER",
+    "content": [
+      "react",
+      "immutable",
+      "immutablejs",
+      "bootstrap",
+      "react-router 4",
+      "webpack 2",
+      "redux",
+      "redux devtools extension"
+    ],
+    "server": [
+      "spa",
+      "ssr"
+    ]
+  },
+  {
+    "name": "react-redux-bootstrap-webpack-ssr-starter",
+    "url": "https://github.com/MacKentoch/react-redux-bootstrap-webpack-ssr-starter",
+    "imageSrc": "",
+    "description": "react js + redux + react router + bootstrap + webpack2 + server side rendering starter",
+    "content": [
+      "react",
+      "redux",
+      "bootstrap",
+      "react-router 4",
+      "webpack 2",
+      "redux",
+      "redux devtools"
+    ],
+    "server": [
+      "spa"
+    ]
+  },
+  {
+    "name": "react-redux-graphql-apollo-bootstrap-webpack-starter",
+    "url": "https://github.com/MacKentoch/react-redux-graphql-apollo-bootstrap-webpack-starter",
+    "imageSrc": "",
+    "description": "",
+    "content": [
+      "react",
+      "redux",
+      "bootstrap",
+      "react-router 4",
+      "webpack 2",
+      "redux"
+    ],
+    "server": [
+      "spa"
+    ]
+  }
+]
