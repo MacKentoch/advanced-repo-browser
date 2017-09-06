@@ -1,8 +1,11 @@
 // @flow
-import * as RepoTypes from '../../config/models/types';
+
+import * as Types from '../../config/models/types';
+
 
 export type Props = {
-  card: RepoTypes.Card
+  card: Types.Card,
+  bordered: boolean
 };
 
 export type State = {

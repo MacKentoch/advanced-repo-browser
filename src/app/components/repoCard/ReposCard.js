@@ -3,12 +3,18 @@ import React, {
   PureComponent
 }                   from 'react';
 import {
-  Card
+  Card,
+  Button,
+  Icon
 }                   from 'antd';
 import * as Types   from './types';
 
 
 class RepoCard extends PureComponent<Types.Props, Types.State> {
+  static defaultProps = {
+    bordered: true
+  };
+
   state = {
     isLoading: false
   };
@@ -22,31 +28,56 @@ class RepoCard extends PureComponent<Types.Props, Types.State> {
         description,
         content,
         platform
-      }
+      },
+      bordered
     } = this.props;
 
     return (
       <Card
-        style={{ width: 240 }}
+        className="repos-card"
+        bordered={bordered}
         bodyStyle={{ padding: 0 }}
       >
-        <div className="custom-image">
+        <div className="repos-card-image">
           <img
             alt={name}
             width="100%"
             src={imageSrc}
           />
         </div>
-        <div className="custom-card">
+        <div className="repos-card-body">
           <h3>
             {name}
           </h3>
           <p>
             {description}
           </p>
+          <Button
+            type="primary"
+            onClick={this.handlesOnRepo}
+          >
+            <Icon type="github" />
+            go to repository
+          </Button>
         </div>
       </Card>
     );
+  }
+
+  handlesOnRepo = (
+    event: SyntheticEvent<>
+  ): void => {
+    if (event) {
+      event.preventDefault();
+    }
+
+    const {
+      card: {
+        url
+      }
+    } = this.props;
+
+    window.open(url, '_blank');
   }
 }
 

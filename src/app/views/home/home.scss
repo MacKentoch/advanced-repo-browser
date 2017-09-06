@@ -1,0 +1,23 @@
+#home {
+
+  .title {
+    padding: {
+      bottom: 20px;
+    }
+  }
+
+  .repos-cards-container {
+    display: flex;
+    flex: 0 1 auto;
+    flex-flow: row wrap;
+    flex-direction: row;
+
+    align-items: flex-start;
+    justify-content: center;
+
+    margin: {
+      top: 15px;
+    }
+  }
+}
+

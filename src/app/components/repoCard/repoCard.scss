@@ -1,0 +1,17 @@
+.repos-card {
+  width: 400px;
+
+  .repos-card-image {
+    padding: 0px;
+  }
+
+  .repos-card-body {
+    padding: {
+      top: 5px;
+      bottom: 5px;
+      left: 10px;
+      right: 10px;
+    }
+  }
+}
+

@@ -8,11 +8,22 @@
     <meta name="description" content="Advanced Repo Browser">
     <meta name="author" content="Erwan DATIN (MacKentoch)">
     <style>
+      .loader {
+        width: 100vh;
+        height: 100vw;
+      }
+
       .loading-message {
-        position: relative;
+        /* position: relative; */
         margin: 100px auto;
         text-align: center;
         color: #425164;
+
+        display: flex;
+        flex: 0 1 auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
 
       .spinner {

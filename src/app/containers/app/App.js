@@ -16,6 +16,7 @@ import MainRoutes             from '../../routes/MainRoutes';
 const { Header, Content, Footer, Sider } = Layout;
 const MenuItem = Menu.Item; // workaround to fix production bundle error: "Menu not found"
 
+
 class App extends Component {
   static propTypes = {
     // react-router 4:

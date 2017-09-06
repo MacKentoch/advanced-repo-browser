@@ -7,8 +7,13 @@ import PropTypes      from 'prop-types';
 import AnimatedView   from '../../components/animatedView/AnimatedView';
 import {
   Button,
-  Icon
-}     from 'antd';
+  Icon,
+  Input
+}                     from 'antd';
+import RepoCard       from '../../components/repoCard/ReposCard';
+import webStarters    from '../../config/models/web-starters.json';
+
+const { Search  } = Input;
 
 class Home extends PureComponent {
   static propTypes= {
@@ -36,33 +41,40 @@ class Home extends PureComponent {
   render() {
     return(
       <AnimatedView>
-        <div>
-          <h1>
+        <div id="home">
+          <h1 className="title">
             Advanced repository browser
           </h1>
-          <p>
-            <Button
-              type="primary"
-              onClick={this.handlesOnGoAbout}
-            >
-              <Icon type="info-circle-o" />
-              go to about
-            </Button>
-          </p>
+          <Search />
+          <div className="repos-cards-container">
+            {
+              webStarters.map(
+                (
+                  starter,
+                  starterIndex
+                ) => {
+                  return (
+                    <div
+                      key={starterIndex}
+                      style={{
+                        marginTop: '10px',
+                        marginBottom: '10px',
+                        marginLeft: '10px',
+                        marginRight: '10px'
+                      }}
+                    >
+                      <RepoCard
+                        card={starter}
+                      />
+                    </div>
+                  );
+                }
+              )
+            }
+          </div>
         </div>
       </AnimatedView>
     );
-  }
-
-  handlesOnGoAbout = (
-    event: SyntheticEvent<>
-  ): void => {
-    if (event) {
-      event.preventDefault();
-      const { history } = this.props;
-
-      history.push('/about');
-    }
   }
 }
 

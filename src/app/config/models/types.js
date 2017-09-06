@@ -1,9 +1,5 @@
 // @flow
 
-/**
- * All repo models have this Type of data
- */
-
 export type Card = {
   name: string,
   url: string,
