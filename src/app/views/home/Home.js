@@ -45,7 +45,13 @@ class Home extends PureComponent {
           <h1 className="title">
             Advanced repository browser
           </h1>
-          <Search />
+          <div className="search-container">
+            <Search
+              placeholder="search a repository..."
+              className="search-input"
+              onSearch={this.handlesOnSearch}
+            />
+          </div>
           <div className="repos-cards-container">
             {
               webStarters.map(
@@ -75,6 +81,10 @@ class Home extends PureComponent {
         </div>
       </AnimatedView>
     );
+  }
+
+  handlesOnSearch = (value: string) => {
+
   }
 }
 

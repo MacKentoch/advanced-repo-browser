@@ -6,6 +6,18 @@
     }
   }
 
+  .search-container {
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .search-input {
+    width: 800px;
+  }
+
+
   .repos-cards-container {
     display: flex;
     flex: 0 1 auto;
