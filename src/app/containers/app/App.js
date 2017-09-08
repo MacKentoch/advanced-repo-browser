@@ -1,9 +1,8 @@
-// @flow weak
+// @flow
 
 import React, {
   Component
 }                             from 'react';
-import PropTypes              from 'prop-types';
 import {
   Layout,
   Menu,
@@ -12,34 +11,24 @@ import {
 import navigationModel        from '../../config/navigation.json';
 import drawerModel            from '../../config/drawer.json';
 import MainRoutes             from '../../routes/MainRoutes';
+import * as Types             from './types';
 
 const { Header, Content, Footer, Sider } = Layout;
 const MenuItem = Menu.Item; // workaround to fix production bundle error: "Menu not found"
 
 
-class App extends Component {
-  static propTypes = {
-    // react-router 4:
-    match:    PropTypes.object.isRequired,
-    location: PropTypes.object.isRequired,
-    history:  PropTypes.object.isRequired,
-
-    // views:
-    currentView: PropTypes.string
-
-  };
-
+class App extends Component<Types.Props, Types.State> {
   state = {
-    navModel: navigationModel,
-    drawerModel: drawerModel,
+    nav: navigationModel,
+    drawer: drawerModel,
     selectedSidemenu: ['/'],
     collapsed: false
   };
 
   render() {
     const {
-      navModel,
-      drawerModel,
+      // nav,
+      drawer,
       selectedSidemenu,
       collapsed
     } = this.state;
@@ -47,8 +36,8 @@ class App extends Component {
     return (
       <Layout className="layout">
         <Sider
-          // breakpoint="lg"
-          // collapsedWidth="0"
+          breakpoint="sm"
+          collapsedWidth="400"
           onCollapse={this.handlesOnCollpase}
           trigger={null}
           collapsible
@@ -62,7 +51,7 @@ class App extends Component {
             onClick={this.handlesOnMenuClick}
           >
           {
-            drawerModel.map(
+            drawer.map(
               (
                 {
                   label,
@@ -83,14 +72,16 @@ class App extends Component {
           </Menu>
         </Sider>
         <Layout>
-          <Header style={{ background: '#4A4A4A', padding: 0 }}>
+          <Header
+            style={{ position: 'fixed', width: '100%', zIndex:99, background: '#4A4A4A', padding: 0 }}
+          >
             <Icon
               className="trigger"
               type={ collapsed ? 'menu-unfold' : 'menu-fold'}
               onClick={this.toggle}
             />
           </Header>
-          <Content style={{ margin: '24px 16px 0' }}>
+          <Content style={{ margin: '74px 16px 0' }}>
             <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
               <MainRoutes />
             </div>
@@ -113,7 +104,7 @@ class App extends Component {
   }
 
   handlesOnMenuClick = (
-    event: SyntheticEvent<>
+    event: SyntheticEvent<*>
   ): void => {
     if (event) {
       const { history } = this.props;

@@ -6,8 +6,6 @@ import React, {
 import PropTypes      from 'prop-types';
 import AnimatedView   from '../../components/animatedView/AnimatedView';
 import {
-  Button,
-  Icon,
   Input
 }                     from 'antd';
 import RepoCard       from '../../components/repoCard/ReposCard';
@@ -84,7 +82,7 @@ class Home extends PureComponent {
   }
 
   handlesOnSearch = (value: string) => {
-
+    console.log('searched value;: ', value);
   }
 }
 
