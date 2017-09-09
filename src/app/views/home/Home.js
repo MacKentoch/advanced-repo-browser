@@ -1,5 +1,4 @@
-// @flow weak
-
+// @flow
 import React, {
   PureComponent
 }                     from 'react';
@@ -10,11 +9,13 @@ import {
 }                     from 'antd';
 import RepoCard       from '../../components/repoCard/ReposCard';
 import webStarters    from '../../config/models/web-starters.json';
+import * as Types     from './types';
 
 const { Search  } = Input;
 
-class Home extends PureComponent {
-  static propTypes= {
+
+class Home extends PureComponent<Types.Props, Types.State> {
+  static propTypes = {
     // react-router 4:
     match:    PropTypes.object.isRequired,
     location: PropTypes.object.isRequired,
@@ -24,6 +25,11 @@ class Home extends PureComponent {
     currentView:  PropTypes.string.isRequired,
     enterHome:    PropTypes.func.isRequired,
     leaveHome:    PropTypes.func.isRequired
+  };
+
+
+  state = {
+    starters: webStarters
   };
 
   componentDidMount() {
@@ -37,6 +43,10 @@ class Home extends PureComponent {
   }
 
   render() {
+    const {
+      starters
+    } = this.state;
+
     return(
       <AnimatedView>
         <div id="home">
@@ -48,11 +58,12 @@ class Home extends PureComponent {
               placeholder="search a repository..."
               className="search-input"
               onSearch={this.handlesOnSearch}
+              onChange={this.handlesOnSearch}
             />
           </div>
           <div className="repos-cards-container">
             {
-              webStarters.map(
+              starters.map(
                 (
                   starter,
                   starterIndex
@@ -81,8 +92,16 @@ class Home extends PureComponent {
     );
   }
 
-  handlesOnSearch = (value: string) => {
-    console.log('searched value;: ', value);
+  handlesOnSearch = (
+    event: SyntheticEvent<*>
+  ): void => {
+    if (event) {
+      event.preventDefault();
+      const searchedValue = event.target.value.trim();
+
+      const filteredStarters = webStarters.filter(starter => starter.name.trim().includes(searchedValue));
+      this.setState({ starters: filteredStarters });
+    }
   }
 }
 
