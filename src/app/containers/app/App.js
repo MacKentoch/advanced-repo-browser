@@ -36,8 +36,6 @@ class App extends Component<Types.Props, Types.State> {
     return (
       <Layout className="layout">
         <Sider
-          breakpoint="sm"
-          collapsedWidth="400"
           onCollapse={this.handlesOnCollpase}
           trigger={null}
           collapsible
@@ -72,7 +70,7 @@ class App extends Component<Types.Props, Types.State> {
           </Menu>
         </Sider>
         <Layout>
-          <Header
+          <Header  // className="layout-header"
             style={{ position: 'fixed', width: '100%', zIndex:99, background: '#4A4A4A', padding: 0 }}
           >
             <Icon

@@ -14,3 +14,14 @@
   transition: color .3s;
   color: #F1F2F3;
 }
+
+.layout-header {
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  background: #4A4A4A;
+  padding: 0;
+}
+.layout-content {
+  margin: 74px 16px 0;
+}
