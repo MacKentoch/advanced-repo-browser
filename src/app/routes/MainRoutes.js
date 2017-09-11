@@ -9,11 +9,13 @@ import Home             from '../views/home';
 import About            from '../views/about';
 import PrivateRoute     from '../components/privateRoute/PrivateRoute';
 import Protected        from '../views/protected';
+import WebStarters      from '../views/webStarters';
 
 const MainRoutes = () => {
   return (
     <Switch>
       <Route exact path="/" component={Home} />
+      <Route path="/webstarters" component={WebStarters} />
       <Route path="/about" component={About} />
       {/* private views: need user to be authenticated */}
       <PrivateRoute path="/protected" component={Protected} />

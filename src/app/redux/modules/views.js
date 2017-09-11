@@ -128,7 +128,7 @@ export function enterWebStarters(): Action {
   };
 }
 
-export function leaveProtected(): Action {
+export function leaveWebStarters(): Action {
   return {
     type:         LEAVE_WEB_STARTERS_VIEW,
     currentView:  'web-starters'
