@@ -8,13 +8,13 @@ import {
   Input
 }                     from 'antd';
 import RepoCard       from '../../components/repoCard/ReposCard';
-import webStarters        from '../../config/models/web-starters.json';
+import webApps        from '../../config/models/web-apps.json';
 import * as Types     from './types';
 
 const { Search  } = Input;
 
 
-class WebStarters extends PureComponent<Types.Props, Types.State> {
+class WebApps extends PureComponent<Types.Props, Types.State> {
   static propTypes = {
     // react-router 4:
     match:    PropTypes.object.isRequired,
@@ -23,23 +23,23 @@ class WebStarters extends PureComponent<Types.Props, Types.State> {
 
     // views:
     currentView:         PropTypes.string.isRequired,
-    enterWebApps:    PropTypes.func.isRequired,
-    leaveWebApps:    PropTypes.func.isRequired
+    enterWebStarters:    PropTypes.func.isRequired,
+    leaveWebStarters:    PropTypes.func.isRequired
   };
 
 
   state = {
-    starters: webStarters
+    starters: webApps
   };
 
   componentDidMount() {
-    const { enterWebApps } = this.props;
-    enterWebApps();
+    const { enterWebStarters } = this.props;
+    enterWebStarters();
   }
 
   componentWillUnmount() {
-    const { leaveWebApps } = this.props;
-    leaveWebApps();
+    const { leaveWebStarters } = this.props;
+    leaveWebStarters();
   }
 
   render() {
@@ -51,7 +51,7 @@ class WebStarters extends PureComponent<Types.Props, Types.State> {
       <AnimatedView>
         <div id="home">
           <h1 className="title">
-            Web Starters
+            Web Applications
           </h1>
           <div className="search-container">
             <Search
@@ -99,10 +99,10 @@ class WebStarters extends PureComponent<Types.Props, Types.State> {
       event.preventDefault();
       const searchedValue = event.target.value.trim();
 
-      const filteredStarters = webStarters.filter(starter => starter.name.trim().includes(searchedValue));
+      const filteredStarters = webApps.filter(starter => starter.name.trim().includes(searchedValue));
       this.setState({ starters: filteredStarters });
     }
   }
 }
 
-export default WebStarters;
+export default WebApps;
