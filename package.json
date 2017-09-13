@@ -122,6 +122,7 @@
     "history": "^4.6.1",
     "js-base64": "^2.1.9",
     "jwt-decode": "^2.2.0",
+    "lodash.isequal": "^4.5.0",
     "moment": "^2.18.1",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",

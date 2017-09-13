@@ -11,6 +11,7 @@ import PrivateRoute     from '../components/privateRoute/PrivateRoute';
 import Protected        from '../views/protected';
 import WebStarters      from '../views/webStarters';
 import WebApps          from '../views/webApps';
+import MobileStarters   from '../views/mobileStarters';
 
 const MainRoutes = () => {
   return (
@@ -18,6 +19,7 @@ const MainRoutes = () => {
       <Route exact path="/" component={Home} />
       <Route path="/webstarters" component={WebStarters} />
       <Route path="/webapps" component={WebApps} />
+      <Route path="/mobilestarters" component={MobileStarters} />
       <Route path="/about" component={About} />
       {/* private views: need user to be authenticated */}
       <PrivateRoute path="/protected" component={Protected} />
