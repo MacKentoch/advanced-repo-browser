@@ -22,6 +22,9 @@ const LEAVE_WEB_APPS_VIEW  = 'LEAVE_WEB_APPS_VIEW';
 const ENTER_MOBILE_STARTERS_VIEW  = 'ENTER_MOBILE_STARTERS_VIEW';
 const LEAVE_MOBILE_STARTERS_VIEW  = 'LEAVE_MOBILE_STARTERS_VIEW';
 
+const ENTER_REACT_NATIVE_LIBS_VIEW = 'ENTER_REACT_NATIVE_LIBS_VIEW';
+const LEAVE_REACT_NATIVE_LIBS_VIEW = 'LEAVE_REACT_NATIVE_LIBS_VIEW';
+
 type State = {
   currentView: string,
   enterTime?: string,
@@ -54,6 +57,7 @@ export default function (
   case ENTER_WEB_STARTERS_VIEW:
   case ENTER_WEB_APPS_VIEW:
   case ENTER_MOBILE_STARTERS_VIEW:
+  case ENTER_REACT_NATIVE_LIBS_VIEW:
     // can't enter if you are already inside
     if (state.currentView !== action.currentView) {
       return {
@@ -69,6 +73,7 @@ export default function (
   case LEAVE_WEB_STARTERS_VIEW:
   case LEAVE_WEB_APPS_VIEW:
   case LEAVE_MOBILE_STARTERS_VIEW:
+  case LEAVE_REACT_NATIVE_LIBS_VIEW:
     // can't leave if you aren't already inside
     if (state.currentView === action.currentView) {
       return {
@@ -160,7 +165,6 @@ export function leaveWebApps(): Action {
   };
 }
 
-
 export function enterMobileStarters(): Action {
   return {
     type:         ENTER_MOBILE_STARTERS_VIEW,
@@ -172,5 +176,19 @@ export function leaveMobileStarters(): Action {
   return {
     type:         LEAVE_MOBILE_STARTERS_VIEW,
     currentView:  'mobile-starter'
+  };
+}
+
+export function enterReactNativeLibs(): Action {
+  return {
+    type:         ENTER_REACT_NATIVE_LIBS_VIEW,
+    currentView:  'react-native-libs'
+  };
+}
+
+export function leaveReactNativeLibs(): Action {
+  return {
+    type:         LEAVE_REACT_NATIVE_LIBS_VIEW,
+    currentView:  'react-native-libs'
   };
 }
