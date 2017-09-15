@@ -5,11 +5,17 @@ import React, {
 import PropTypes      from 'prop-types';
 import AnimatedView   from '../../components/animatedView/AnimatedView';
 import {
-  Input
+  Input,
+  Row,
+  Col
 }                     from 'antd';
 import RepoCard       from '../../components/repoCard/ReposCard';
 import webStarters    from '../../config/models/web-starters.json';
 import * as Types     from './types';
+import {
+  doesMatch
+}                       from '../../services/utils/repositoryMatches';
+import FlipMove         from 'react-flip-move';
 
 const { Search  } = Input;
 
@@ -62,30 +68,45 @@ class Home extends PureComponent<Types.Props, Types.State> {
             />
           </div>
           <div className="repos-cards-container">
-            {
-              starters.map(
-                (
-                  starter,
-                  starterIndex
-                ) => {
-                  return (
-                    <div
-                      key={starterIndex}
-                      style={{
-                        marginTop: '10px',
-                        marginBottom: '10px',
-                        marginLeft: '10px',
-                        marginRight: '10px'
-                      }}
-                    >
+          <Row>
+            <FlipMove
+              staggerDurationBy="30"
+              duration={400}
+              typeName="ul"
+              staggerDelayBy={2}
+            >
+              {
+                starters.map(
+                  (
+                    starter,
+                    starterIndex
+                  ) => {
+                    return (
+                      <li
+                        key={starterIndex}
+                        //  style={{
+                        //    marginTop: '10px',
+                        //    marginBottom: '10px',
+                        //    marginLeft: '10px',
+                        //    marginRight: '10px'
+                        //  }}
+                      >
+                      <Col
+                        md={{ span: 6, offset: 2 }}
+                        xs={{ span: 10, offset: 1 }}
+                      >
                       <RepoCard
                         card={starter}
                       />
-                    </div>
-                  );
-                }
-              )
-            }
+                      </Col>
+
+                      </li>
+                    );
+                  }
+                )
+              }
+            </FlipMove>
+            </Row>
           </div>
         </div>
       </AnimatedView>
@@ -99,7 +120,7 @@ class Home extends PureComponent<Types.Props, Types.State> {
       event.preventDefault();
       const searchedValue = event.target.value.trim();
 
-      const filteredStarters = webStarters.filter(starter => starter.name.trim().includes(searchedValue));
+      const filteredStarters = webStarters.filter(starter => doesMatch(starter, searchedValue));
       this.setState({ starters: filteredStarters });
     }
   }

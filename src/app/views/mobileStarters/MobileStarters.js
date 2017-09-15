@@ -10,6 +10,9 @@ import {
 import RepoCard       from '../../components/repoCard/ReposCard';
 import mobileStarters from '../../config/models/mobile-starters.json';
 import * as Types     from './types';
+import {
+  doesMatch
+}                       from '../../services/utils/repositoryMatches';
 
 const { Search  } = Input;
 
@@ -99,7 +102,7 @@ class MobileStarters extends PureComponent<Types.Props, Types.State> {
       event.preventDefault();
       const searchedValue = event.target.value.trim();
 
-      const filteredStarters = mobileStarters.filter(starter => starter.name.trim().includes(searchedValue));
+      const filteredStarters = mobileStarters.filter(starter => doesMatch(starter, searchedValue));
       this.setState({ starters: filteredStarters });
     }
   }

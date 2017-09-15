@@ -9,6 +9,9 @@ import {
 }                       from 'antd';
 import RepoCard         from '../../components/repoCard/ReposCard';
 import reactNativeLibs  from '../../config/models/react-native-lib.json';
+import {
+  doesMatch
+}                       from '../../services/utils/repositoryMatches';
 import * as Types       from './types';
 
 const { Search  } = Input;
@@ -99,9 +102,7 @@ class ReactNativeLibs extends PureComponent<Types.Props, Types.State> {
       event.preventDefault();
       const searchedValue = event.target.value.trim();
 
-      const doesMatch = (starter) => (starter.name.trim().includes(searchedValue.trim()) || starter.description.trim().includes(searchedValue.trim()));
-
-      const filteredStarters = reactNativeLibs.filter(starter => doesMatch(starter));
+      const filteredStarters = reactNativeLibs.filter(starter => doesMatch(starter, searchedValue));
       this.setState({ starters: filteredStarters });
     }
   }

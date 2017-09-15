@@ -8,8 +8,11 @@ import {
   Input
 }                     from 'antd';
 import RepoCard       from '../../components/repoCard/ReposCard';
-import webStarters        from '../../config/models/web-starters.json';
+import webStarters    from '../../config/models/web-starters.json';
 import * as Types     from './types';
+import {
+  doesMatch
+}                     from '../../services/utils/repositoryMatches';
 
 const { Search  } = Input;
 
@@ -99,7 +102,7 @@ class WebStarters extends PureComponent<Types.Props, Types.State> {
       event.preventDefault();
       const searchedValue = event.target.value.trim();
 
-      const filteredStarters = webStarters.filter(starter => starter.name.trim().includes(searchedValue));
+      const filteredStarters = webStarters.filter(starter => doesMatch(starter, searchedValue));
       this.setState({ starters: filteredStarters });
     }
   }
