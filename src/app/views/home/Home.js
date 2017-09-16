@@ -5,17 +5,19 @@ import React, {
 import PropTypes      from 'prop-types';
 import AnimatedView   from '../../components/animatedView/AnimatedView';
 import {
-  Input,
-  Row,
-  Col
+  Input
 }                     from 'antd';
 import RepoCard       from '../../components/repoCard/ReposCard';
 import webStarters    from '../../config/models/web-starters.json';
 import * as Types     from './types';
 import {
   doesMatch
-}                       from '../../services/utils/repositoryMatches';
-import FlipMove         from 'react-flip-move';
+}                     from '../../services/utils/repositoryMatches';
+import {
+  TransitionMotion,
+  spring,
+  presets
+}                     from 'react-motion';
 
 const { Search  } = Input;
 
@@ -68,13 +70,6 @@ class Home extends PureComponent<Types.Props, Types.State> {
             />
           </div>
           <div className="repos-cards-container">
-          <Row>
-            <FlipMove
-              staggerDurationBy="30"
-              duration={400}
-              typeName="ul"
-              staggerDelayBy={2}
-            >
               {
                 starters.map(
                   (
@@ -82,31 +77,23 @@ class Home extends PureComponent<Types.Props, Types.State> {
                     starterIndex
                   ) => {
                     return (
-                      <li
+                      <div
                         key={starterIndex}
-                        //  style={{
-                        //    marginTop: '10px',
-                        //    marginBottom: '10px',
-                        //    marginLeft: '10px',
-                        //    marginRight: '10px'
-                        //  }}
+                        style={{
+                          marginTop:     '20px',
+                          marginBottom:  '20px',
+                          marginLeft:    '20px',
+                          marginRight:   '20px'
+                        }}
                       >
-                      <Col
-                        md={{ span: 6, offset: 2 }}
-                        xs={{ span: 10, offset: 1 }}
-                      >
-                      <RepoCard
-                        card={starter}
-                      />
-                      </Col>
-
-                      </li>
+                        <RepoCard
+                          card={starter}
+                        />
+                      </div>
                     );
                   }
                 )
               }
-            </FlipMove>
-            </Row>
           </div>
         </div>
       </AnimatedView>
