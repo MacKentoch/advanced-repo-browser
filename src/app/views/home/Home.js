@@ -55,6 +55,16 @@ class Home extends PureComponent<Types.Props, Types.State> {
       starters
     } = this.state;
 
+    const styles = starters.map(
+      (starter) => (
+        {
+          data: {...starter},
+          key: `${starter.name}-${starter.id}`,
+          style: { opacity: 1 }
+        }
+      )
+    );
+
     return(
       <AnimatedView>
         <div id="home">
@@ -69,17 +79,22 @@ class Home extends PureComponent<Types.Props, Types.State> {
               onChange={this.handlesOnSearch}
             />
           </div>
-          <div className="repos-cards-container">
-              {
-                starters.map(
-                  (
-                    starter,
-                    starterIndex
-                  ) => {
-                    return (
+
+          <TransitionMotion
+            willEnter={this.willEnter}
+            willLeave={this.willLeave}
+            styles={styles}
+          >
+          {
+            (interpolatedStyles) => (
+              <div>
+                {
+                  interpolatedStyles.map(
+                    starter => (
                       <div
-                        key={starterIndex}
+                        key={starter.key}
                         style={{
+                          ...starter.style,
                           marginTop:     '20px',
                           marginBottom:  '20px',
                           marginLeft:    '20px',
@@ -87,18 +102,24 @@ class Home extends PureComponent<Types.Props, Types.State> {
                         }}
                       >
                         <RepoCard
-                          card={starter}
+                          card={starter.data}
                         />
                       </div>
-                    );
-                  }
-                )
-              }
-          </div>
+                    )
+                  )
+                }
+              </div>
+            )
+          }
+          </TransitionMotion>
         </div>
       </AnimatedView>
     );
   }
+
+  willEnter = () => ({ opacity: 1 });
+
+  willLeave = () => ({ opacity: spring(0, presets.stiff) });
 
   handlesOnSearch = (
     event: SyntheticEvent<*>

@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "name": "react-bootstrap-webpack-starter",
     "url": "https://github.com/MacKentoch/react-bootstrap-webpack-starter",
     "imageSrc": "https://camo.githubusercontent.com/640748e7f9c4b37374b3cb6b1a4c0dae987c31f8/68747470733a2f2f7261776769742e636f6d2f4d61634b656e746f63682f65617379466f726d47656e657261746f722f6d61737465722f696d616765732f6c616e6775616765732e706e67",
@@ -15,6 +16,7 @@
     ]
   },
   {
+    "id": 2,
     "name": "react-bootstrap-webpack-ssr-starter",
     "url": "https://github.com/MacKentoch/react-bootstrap-webpack-ssr-starter",
     "imageSrc": "https://camo.githubusercontent.com/640748e7f9c4b37374b3cb6b1a4c0dae987c31f8/68747470733a2f2f7261776769742e636f6d2f4d61634b656e746f63682f65617379466f726d47656e657261746f722f6d61737465722f696d616765732f6c616e6775616765732e706e67",
@@ -31,6 +33,7 @@
     ]
   },
   {
+    "id": 3,
     "name": "react-redux-bootstrap-webpack-starter",
     "url": "https://github.com/MacKentoch/react-redux-bootstrap-webpack-starter",
     "imageSrc": "https://camo.githubusercontent.com/640748e7f9c4b37374b3cb6b1a4c0dae987c31f8/68747470733a2f2f7261776769742e636f6d2f4d61634b656e746f63682f65617379466f726d47656e657261746f722f6d61737465722f696d616765732f6c616e6775616765732e706e67",
@@ -48,6 +51,7 @@
     ]
   },
   {
+    "id": 4,
     "name": "react-redux-immutable-webpack-starter",
     "url": "https://github.com/MacKentoch/react-redux-immutable-webpack-starter",
     "imageSrc": "https://camo.githubusercontent.com/640748e7f9c4b37374b3cb6b1a4c0dae987c31f8/68747470733a2f2f7261776769742e636f6d2f4d61634b656e746f63682f65617379466f726d47656e657261746f722f6d61737465722f696d616765732f6c616e6775616765732e706e67",
@@ -67,6 +71,7 @@
     ]
   },
   {
+    "id": 5,
     "name": "react-redux-immutable-webpack-ssr-starter",
     "url": "https://github.com/MacKentoch/react-redux-immutable-webpack-ssr-starter",
     "imageSrc": "https://camo.githubusercontent.com/640748e7f9c4b37374b3cb6b1a4c0dae987c31f8/68747470733a2f2f7261776769742e636f6d2f4d61634b656e746f63682f65617379466f726d47656e657261746f722f6d61737465722f696d616765732f6c616e6775616765732e706e67",
@@ -87,6 +92,7 @@
     ]
   },
   {
+    "id": 6,
     "name": "react-redux-bootstrap-webpack-ssr-starter",
     "url": "https://github.com/MacKentoch/react-redux-bootstrap-webpack-ssr-starter",
     "imageSrc": "https://camo.githubusercontent.com/640748e7f9c4b37374b3cb6b1a4c0dae987c31f8/68747470733a2f2f7261776769742e636f6d2f4d61634b656e746f63682f65617379466f726d47656e657261746f722f6d61737465722f696d616765732f6c616e6775616765732e706e67",
@@ -105,6 +111,7 @@
     ]
   },
   {
+    "id": 7,
     "name": "react-redux-graphql-apollo-bootstrap-webpack-starter",
     "url": "https://github.com/MacKentoch/react-redux-graphql-apollo-bootstrap-webpack-starter",
     "imageSrc": "https://camo.githubusercontent.com/640748e7f9c4b37374b3cb6b1a4c0dae987c31f8/68747470733a2f2f7261776769742e636f6d2f4d61634b656e746f63682f65617379466f726d47656e657261746f722f6d61737465722f696d616765732f6c616e6775616765732e706e67",
