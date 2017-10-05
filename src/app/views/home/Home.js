@@ -3,21 +3,20 @@ import React, {
   PureComponent
 }                     from 'react';
 import PropTypes      from 'prop-types';
-import AnimatedView   from '../../components/animatedView/AnimatedView';
 import {
-  Input
+  Input,
+  Row,
+  Col
 }                     from 'antd';
+import FlipMove       from 'react-flip-move';
 import RepoCard       from '../../components/repoCard/ReposCard';
 import webStarters    from '../../config/models/web-starters.json';
 import * as Types     from './types';
 import {
   doesMatch
 }                     from '../../services/utils/repositoryMatches';
-import {
-  TransitionMotion,
-  spring,
-  presets
-}                     from 'react-motion';
+
+import AnimatedView   from '../../components/animatedView/AnimatedView';
 
 const { Search  } = Input;
 
@@ -34,7 +33,6 @@ class Home extends PureComponent<Types.Props, Types.State> {
     enterHome:    PropTypes.func.isRequired,
     leaveHome:    PropTypes.func.isRequired
   };
-
 
   state = {
     starters: webStarters
@@ -55,16 +53,6 @@ class Home extends PureComponent<Types.Props, Types.State> {
       starters
     } = this.state;
 
-    const styles = starters.map(
-      (starter) => (
-        {
-          data: {...starter},
-          key: `${starter.name}-${starter.id}`,
-          style: { opacity: 1 }
-        }
-      )
-    );
-
     return(
       <AnimatedView>
         <div id="home">
@@ -79,47 +67,42 @@ class Home extends PureComponent<Types.Props, Types.State> {
               onChange={this.handlesOnSearch}
             />
           </div>
-
-          <TransitionMotion
-            willEnter={this.willEnter}
-            willLeave={this.willLeave}
-            styles={styles}
-          >
-          {
-            (interpolatedStyles) => (
-              <div>
-                {
-                  interpolatedStyles.map(
-                    starter => (
-                      <div
-                        key={starter.key}
-                        style={{
-                          ...starter.style,
-                          marginTop:     '20px',
-                          marginBottom:  '20px',
-                          marginLeft:    '20px',
-                          marginRight:   '20px'
-                        }}
-                      >
-                        <RepoCard
-                          card={starter.data}
-                        />
-                      </div>
-                    )
-                  )
-                }
-              </div>
-            )
-          }
-          </TransitionMotion>
+          <Row>
+            <FlipMove
+              duration={750}
+              easing="ease-out"
+            >
+            {
+              starters.map(
+                (starter, starterIndex) => (
+                  <Col
+                    key={starterIndex}
+                    md={8}
+                    sm={12}
+                    xs={24}
+                  >
+                    <div
+                      style={{
+                        display: 'flex',
+                        flex: '1',
+                        flexDirection: 'column',
+                        alignItems: 'center'
+                      }}
+                    >
+                      <RepoCard
+                        card={starter}
+                      />
+                    </div>
+                  </Col>
+                )
+              )
+            }
+            </FlipMove>
+          </Row>
         </div>
       </AnimatedView>
     );
   }
-
-  willEnter = () => ({ opacity: 1 });
-
-  willLeave = () => ({ opacity: spring(0, presets.stiff) });
 
   handlesOnSearch = (
     event: SyntheticEvent<*>

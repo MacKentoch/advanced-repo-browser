@@ -36,7 +36,7 @@ class RepoCard extends PureComponent<Types.Props, Types.State> {
       <Card
         className="repos-card"
         bordered={bordered}
-        bodyStyle={{ padding: 0 }}
+        bodyStyle={{ padding: 10 }}
       >
         <div className="repos-card-image">
           <img

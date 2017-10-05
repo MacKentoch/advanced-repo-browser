@@ -22,7 +22,7 @@ class App extends Component<Types.Props, Types.State> {
     nav: navigationModel,
     drawer: drawerModel,
     selectedSidemenu: ['/'],
-    collapsed: false
+    collapsed: true
   };
 
   render() {
@@ -39,12 +39,13 @@ class App extends Component<Types.Props, Types.State> {
           onCollapse={this.handlesOnCollpase}
           trigger={null}
           collapsible
-          collapsed={this.state.collapsed}
+          collapsed={collapsed}
+          style={{backgroundColor: '#FFF'}}
         >
-          <div className="side-menu-logo" />
+          <div className="side-menu-logo" style={{backgroundColor: '#000', borderRight: '1px solid #000'}} />
           <Menu
-            theme="dark"
             mode="inline"
+            style={{ height: '100%', borderRight: '0px solid #e9e9e9' }}
             defaultSelectedKeys={selectedSidemenu}
             onClick={this.handlesOnMenuClick}
           >
@@ -69,18 +70,20 @@ class App extends Component<Types.Props, Types.State> {
           }
           </Menu>
         </Sider>
-        <Layout>
-          <Header  // className="layout-header"
-            style={{ position: 'fixed', width: '100%', zIndex:99, background: '#4A4A4A', padding: 0 }}
-          >
-            <Icon
-              className="trigger"
-              type={ collapsed ? 'menu-unfold' : 'menu-fold'}
-              onClick={this.toggle}
-            />
-          </Header>
-          <Content style={{ margin: '74px 16px 0' }}>
-            <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
+        <Header  // className="layout-header"
+          style={{ position: 'fixed', width: '100%', zIndex:99, padding: 0, paddingLeft: '10px', backgroundColor: '#000' }}
+        >
+          <Icon
+            className="trigger"
+            type={ collapsed ? 'menu-unfold' : 'menu-fold'}
+            onClick={this.toggle}
+          />
+        </Header>
+        <Layout
+          style={{ background: '#fff', borderLeft: '1px solid #e9e9e9', paddingTop: '64px' }}
+        >
+          <Content style={{ margin: '74px 16px 0',  background: '#fff', }}>
+            <div style={{ padding: 24, minHeight: 360 }}>
               <MainRoutes />
             </div>
           </Content>
@@ -98,6 +101,7 @@ class App extends Component<Types.Props, Types.State> {
   ): void => {
     /* eslint-disable no-console */
     console.log(collapsed, type);
+    this.setState({collapsed});
     /* eslint-enable no-console */
   }
 
