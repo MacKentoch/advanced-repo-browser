@@ -5,8 +5,11 @@ import React, {
 import PropTypes      from 'prop-types';
 import AnimatedView   from '../../components/animatedView/AnimatedView';
 import {
-  Input
+  Input,
+  Row,
+  Col
 }                     from 'antd';
+import FlipMove       from 'react-flip-move';
 import RepoCard       from '../../components/repoCard/ReposCard';
 import mobileStarters from '../../config/models/mobile-starters.json';
 import * as Types     from './types';
@@ -64,7 +67,11 @@ class MobileStarters extends PureComponent<Types.Props, Types.State> {
               onChange={this.handlesOnSearch}
             />
           </div>
-          <div className="repos-cards-container">
+          <Row>
+            <FlipMove
+              duration={750}
+              easing="ease-out"
+            >
             {
               starters.map(
                 (
@@ -72,24 +79,31 @@ class MobileStarters extends PureComponent<Types.Props, Types.State> {
                   starterIndex
                 ) => {
                   return (
-                    <div
+                    <Col
                       key={starterIndex}
-                      style={{
-                        marginTop: '10px',
-                        marginBottom: '10px',
-                        marginLeft: '10px',
-                        marginRight: '10px'
-                      }}
+                      md={8}
+                      sm={12}
+                      xs={24}
                     >
-                      <RepoCard
-                        card={starter}
-                      />
-                    </div>
+                      <div
+                        style={{
+                          display: 'flex',
+                          flex: '1',
+                          flexDirection: 'column',
+                          alignItems: 'center'
+                        }}
+                      >
+                        <RepoCard
+                          card={starter}
+                        />
+                      </div>
+                    </Col>
                   );
                 }
               )
             }
-          </div>
+            </FlipMove>
+          </Row>
         </div>
       </AnimatedView>
     );
