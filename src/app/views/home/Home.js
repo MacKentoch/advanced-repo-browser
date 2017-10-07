@@ -15,7 +15,6 @@ import * as Types     from './types';
 import {
   doesMatch
 }                     from '../../services/utils/repositoryMatches';
-
 import AnimatedView   from '../../components/animatedView/AnimatedView';
 
 const { Search  } = Input;
