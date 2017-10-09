@@ -3,16 +3,19 @@ import React, {
   PureComponent
 }                     from 'react';
 import PropTypes      from 'prop-types';
-import AnimatedView   from '../../components/animatedView/AnimatedView';
 import {
-  Input
+  Input,
+  Row,
+  Col
 }                     from 'antd';
+import FlipMove       from 'react-flip-move';
 import RepoCard       from '../../components/repoCard/ReposCard';
 import webStarters    from '../../config/models/web-starters.json';
 import * as Types     from './types';
 import {
   doesMatch
 }                     from '../../services/utils/repositoryMatches';
+import AnimatedView   from '../../components/animatedView/AnimatedView';
 
 const { Search  } = Input;
 
@@ -64,32 +67,44 @@ class WebStarters extends PureComponent<Types.Props, Types.State> {
               onChange={this.handlesOnSearch}
             />
           </div>
-          <div className="repos-cards-container">
-            {
-              starters.map(
-                (
-                  starter,
-                  starterIndex
-                ) => {
-                  return (
-                    <div
-                      key={starterIndex}
-                      style={{
-                        marginTop: '10px',
-                        marginBottom: '10px',
-                        marginLeft: '10px',
-                        marginRight: '10px'
-                      }}
-                    >
-                      <RepoCard
-                        card={starter}
-                      />
-                    </div>
-                  );
-                }
-              )
-            }
-          </div>
+          <Row>
+            <FlipMove
+              duration={750}
+              easing="ease-out"
+            >
+              {
+                starters.map(
+                  (
+                    starter,
+                    starterIndex
+                  ) => {
+                    return (
+                      <Col
+                        key={starterIndex}
+                        md={8}
+                        sm={12}
+                        xs={24}
+                      >
+                        <div
+                          key={starterIndex}
+                          style={{
+                            display: 'flex',
+                            flex: '1',
+                            flexDirection: 'column',
+                            alignItems: 'center'
+                          }}
+                        >
+                          <RepoCard
+                            card={starter}
+                          />
+                        </div>
+                      </Col>
+                    );
+                  }
+                )
+              }
+            </FlipMove>
+          </Row>
         </div>
       </AnimatedView>
     );
