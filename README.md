@@ -3,9 +3,7 @@ React + React-Router 4 + Redux + Ant Design + Webpack 3 with Hot Reload and redu
 
 > An alternate way to browse your repository or the specific repository you want to keep easy to pick up. For my concern I have tons of `starters` (*aka boilerplates*). With time it becomes more and more horrible to browse them in my Github.
 
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/Mp96tCWH2KdajZuBzqB6jwj8/MacKentoch/advanced-repo-browser'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/Mp96tCWH2KdajZuBzqB6jwj8/MacKentoch/advanced-repo-browser.svg' />
-</a>
+
 
 ## Detailed Content
 
